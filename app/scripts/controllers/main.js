@@ -23,6 +23,10 @@ angular.module('walletApp')
       $scope.amountRemove = ''; // clear input
     };
 
+    $scope.reset = function() {
+      $scope.transactions = [];
+    };
+
     $scope.updateBalance = function(amount) {
       var balance = 0;
       angular.forEach($scope.transactions, function(transaction) {
