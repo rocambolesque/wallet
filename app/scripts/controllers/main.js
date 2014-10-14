@@ -11,4 +11,8 @@ angular.module('walletApp')
     $scope.add = function(amount) {
       $scope.transactions.push({amount: amount});
     };
+
+    $scope.remove = function(amount) {
+      $scope.transactions.push({amount: -amount});
+    };
   });
