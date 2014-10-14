@@ -2,9 +2,9 @@
 
 angular.module('walletApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+    $scope.transactions = [
+      { amount: 90 },
+      { amount: 70 },
+      { amount: 10 }
     ];
   });
