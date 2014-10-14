@@ -8,16 +8,11 @@ app.directive('transactions', function() {
     restrict: 'E',
     replace: true,
     scope: {
-      transactions: '='
+      transactions: '=',
+      balance: '='
     },
     templateUrl: 'partials/transactions.html',
     link: function(scope, element) {
-      scope.$watch('transactions', function(newVal) {
-        scope.balance = 0;
-        angular.forEach(scope.transactions, function(transaction) {
-          scope.balance += parseFloat(transaction.amount);
-        });
-      }, true);
     }
   };
 });

@@ -18,15 +18,24 @@
 
 <div class="row">
 <div class="col-md-4">
-  <input type="text" ng-model="amountAdd" />
-  <button class="btn btn-success" ng-click="add(amountAdd)">Add</button>
+  <form name="formAdd" novalidate>
+    <input ng-model="amountAdd" type="number" min="0" name="inputAdd" required />
+    <button ng-disabled="formAdd.$invalid" class="btn btn-success" ng-click="add(amountAdd)">Add</button>
+    <span class="error" ng-show="formAdd.inputAdd.$error.number">Not a valid number</span>
+    <span class="error" ng-show="formAdd.inputAdd.$error.min">Cannot add a negative amount</span>
+  </form>
 </div>
 <div class="col-md-4">
-  <transactions transactions="transactions"></transactions>
+  <transactions transactions="transactions" balance="balance"></transactions>
 </div>
 <div class="col-md-4">
-  <input type="text" ng-model="amountRemove" />
-  <button class="btn btn-danger" ng-click="remove(amountRemove)">Remove</button>
+  <form name="formRemove" novalidate>
+    <input ng-model="amountRemove" type="number" min="0" name="inputRemove" required />
+    <button ng-disabled="formRemove.$invalid" class="btn btn-danger" ng-click="remove(amountRemove)">Remove</button>
+    <span class="error" ng-show="formRemove.inputRemove.$error.number">Not a valid number</span>
+    <span class="error" ng-show="formRemove.inputRemove.$error.min">Cannot remove a negative amount</span>
+    <span class="error" ng-show="balance - amountRemove < 0">You don't have the money!</span>
+  </form>
 </div>
 </div>
 
