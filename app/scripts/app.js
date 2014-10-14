@@ -4,7 +4,8 @@ angular.module('walletApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'LocalStorageModule'
 ])
   .config(function ($routeProvider) {
     $routeProvider
