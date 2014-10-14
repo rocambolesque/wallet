@@ -12,10 +12,12 @@ app.directive('transactions', function() {
     },
     templateUrl: 'partials/transactions.html',
     link: function(scope, element) {
-      scope.balance = 0;
-      angular.forEach(scope.transactions, function(transaction) {
-        scope.balance += transaction.amount;
-      });
+      scope.$watch('transactions', function(newVal) {
+        scope.balance = 0;
+        angular.forEach(scope.transactions, function(transaction) {
+          scope.balance += parseFloat(transaction.amount);
+        });
+      }, true);
     }
   };
 });
