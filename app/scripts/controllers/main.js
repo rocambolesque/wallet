@@ -67,6 +67,7 @@ angular.module('walletApp')
       });
 
       $scope.exchangeRate = exchangeRate;
+      localStorageService.set('exchangeRate', $scope.exchangeRate);
       $scope.transactions = transactions;
     };
 
