@@ -9,7 +9,8 @@ app.directive('transactions', function() {
     replace: true,
     scope: {
       transactions: '=',
-      balance: '='
+      balance: '=',
+      currency: '='
     },
     templateUrl: 'partials/transactions.html',
     link: function(scope, element) {

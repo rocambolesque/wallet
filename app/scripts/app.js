@@ -16,4 +16,9 @@ angular.module('walletApp', [
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .constant('config', {
+    api: {
+      root: 'http://api.wallet.dev'
+    }
   });

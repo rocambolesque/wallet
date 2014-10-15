@@ -1,6 +1,6 @@
 <ul>
-  <span>Balance: {{ balance }}<i class="fa fa-btc"></i></span>
+  <span>Balance: {{ balance }}<i class="fa fa-{{ currency }}"></i></span>
   <li ng-repeat="transaction in transactions">
-    {{ transaction.amount }} bitcoins
+    {{ transaction.amount }} {{ currency }}
   </li>
 </ul>

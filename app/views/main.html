@@ -13,7 +13,18 @@
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     Wallet app
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Start spending!</a></p>
+</div>
+
+<div class="col-md-offset-4">
+  <h2>Exchange rates today:</h2>
+  <div ng-repeat="exchangeRate in exchangeRates" class="row">
+    <div class="col-md-4">
+      <span>{{ exchangeRate.currency }}: {{ exchangeRate.value }}</span>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-default" ng-click="convert(exchangeRate)">To {{ exchangeRate.currency }}</button>
+    </div>
+  </div>
 </div>
 
 <div class="row">
@@ -26,7 +37,7 @@
   </form>
 </div>
 <div class="col-md-4">
-  <transactions transactions="transactions" balance="balance"></transactions>
+  <transactions transactions="transactions" balance="balance" currency="exchangeRate.currency"></transactions>
 </div>
 <div class="col-md-4">
   <form name="formRemove" novalidate>
